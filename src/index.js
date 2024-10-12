@@ -1,6 +1,0 @@
-function sayHello() {
-  const name = process.argv[2] || 'World';
-  console.log(`Hello ${name}!`);
-}
-
-sayHello();
