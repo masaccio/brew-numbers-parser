@@ -9,12 +9,11 @@ class NumbersParser < Formula
   depends_on "protobuf"
   depends_on "python3"
 
+${resources}
+
   def install
-    venv = virtualenv_create(libexec, "python3)
-    %w[${dependencies}].each do |r|
-      venv.pip_install resource(r)
-    end
-    venv.pip_install_and_link buildpath
+    virtualenv_create(libexec, "python3")
+    virtualenv_install_with_resources
   end
 
   test do
